@@ -3,7 +3,7 @@
     session_start();
   }
   include("../Server/Admin-Panel/config/db.php");
-  include $_SERVER['DOCUMENT_ROOT'] . '/Ecomerse-Website/Client/Components/header.html';
+  include $_SERVER['DOCUMENT_ROOT'] . '/Ecoverse/Client/Components/header.html';
 
   $is_logged_in = isset($_SESSION['user_id']);
   $username = "";
@@ -193,4 +193,4 @@
 
 
 
- <?php include $_SERVER['DOCUMENT_ROOT'] . '/Ecomerse-Website/Client/Components/footer.html';; ?>
+ <?php include $_SERVER['DOCUMENT_ROOT'] . '/Ecoverse/Client/Components/footer.html';; ?>

@@ -192,6 +192,7 @@ $user_id = $_SESSION['user_id'];
 
   </div>
 </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 <?php include("./includes/mobile-icon.php") ?>
 <?php include 'Components/footer2.html'; ?>
