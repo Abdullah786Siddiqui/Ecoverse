@@ -4,7 +4,7 @@ session_start();
 require '../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
-
+\Stripe\Stripe::setApiKey($_ENV['StripeApikey']);
 
 if (!isset($_POST['cart'])) {
   die('Cart data missing.');
