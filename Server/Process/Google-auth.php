@@ -7,7 +7,7 @@ $dotenv->load();
 $client = new Google_Client();
 $client->setClientId($_ENV["CLIENT_ID"]);
 $client->setClientSecret($_ENV["CLIENT_SECRET"]);
-$client->setRedirectUri('http://localhost/Ecomerse-Website/Server/Process/Google-auth.php');
+$client->setRedirectUri('http://localhost/Ecoverse/Server/Process/Google-auth.php');
 $client->addScope("email");
 $client->addScope("profile");
 

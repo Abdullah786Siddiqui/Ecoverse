@@ -5,27 +5,8 @@ include_once './includes/Navbar.php';
 ?>
 
 
-<!-- Carousel Section -->
 
-<!-- <div id="proCarousel" class="carousel slide carousel-fade " data-bs-ride="carousel" data-bs-interval="3000">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#proCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#proCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#proCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://img.lazcdn.com/us/domino/a3f182f2-240f-4e66-80b0-5c9710b68a21_PK-1976-688.jpg_2200x2200q80.jpg_.webp" class="d-block w-100 img-fluid" alt="Slide 1">
-    </div>
-    <div class="carousel-item">
-      <img src="https://img.lazcdn.com/us/domino/155b0275-3101-4a78-ab12-2724891122c4_PK-1976-688.jpg_2200x2200q80.jpg_.webp" class="d-block w-100 img-fluid" alt="Slide 2">
-    </div>
-    <div class="carousel-item">
-      <img src="https://img.lazcdn.com/us/domino/b97596f5-2266-4758-8e82-01608445732b_PK-1976-688.jpg_2200x2200q80.jpg_.webp" class="d-block w-100 img-fluid" alt="Slide 3">
-    </div>
-  </div>
-</div> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -67,11 +48,12 @@ include_once './includes/Navbar.php';
     .swiper-slide img {
       height: 220px;
     }
+
     .swiper-slide img {
-    /* width: 100%;
+      /* width: 100%;
     display: block; */
-    object-fit:fill;
-  }
+      object-fit: fill;
+    }
   }
 </style>
 
@@ -87,13 +69,13 @@ include_once './includes/Navbar.php';
     <div class="swiper-slide">
       <img src="https://img.lazcdn.com/us/domino/b97596f5-2266-4758-8e82-01608445732b_PK-1976-688.jpg_2200x2200q80.jpg_.webp">
     </div>
-      <div class="swiper-slide">
+    <div class="swiper-slide">
       <img src="https://img.lazcdn.com/us/domino/5e628089-d6c7-43ed-ae49-555f17feef58_PK-1976-688.jpg_2200x2200q80.jpg_.webp">
     </div>
-      <div class="swiper-slide">
+    <div class="swiper-slide">
       <img src="https://img.lazcdn.com/us/domino/e373c4d3-c451-44aa-a293-32bd1f90eb78_PK-1976-688.jpg_2200x2200q80.jpg_.webp">
     </div>
-      <div class="swiper-slide">
+    <div class="swiper-slide">
       <img src="https://img.lazcdn.com/us/domino/29361361-c0aa-4c69-8f76-1cd9855c13c7_PK-1976-688.jpg_2200x2200q80.jpg_.webp">
     </div>
   </div>
@@ -105,8 +87,13 @@ include_once './includes/Navbar.php';
 <script>
   new Swiper('.swiper', {
     loop: true,
-    autoplay: { delay: 3000 },
-    pagination: { el: '.swiper-pagination', clickable: true },
+    autoplay: {
+      delay: 3000
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
   });
 </script>
 
@@ -237,161 +224,442 @@ include_once './includes/Navbar.php';
 
 <body>
 
-<div class="homepage">
+  <div class="homepage">
     <h1 class="text-center my-5">Features Products</h1>
 
+    <div class="container">
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
+          <a href="#" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
+              <div class="ratio ratio-1x1 mb-3">
+                <img
+                  src="../Server/uploads/1750983047-10.jpg"
+                  class="img-fluid rounded-3 object-fit-cover w-100 h-100"
+                  alt="Product Name"
+                  loading="lazy">
+              </div>
+
+              <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
+
+              <p class="mb-2">
+                <span class="fw-bold text-success fs-6">Rs.900</span>
+                <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
+              </p>
+
+              <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
+          <a href="#" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
+              <div class="ratio ratio-1x1 mb-3">
+                <img
+                  src="../Server/uploads/1751154824-w1.jpg"
+                  class="img-fluid rounded-3 object-fit-cover w-100 h-100"
+                  alt="Product Name"
+                  loading="lazy">
+              </div>
+
+              <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
+
+              <p class="mb-2">
+                <span class="fw-bold text-success fs-6">Rs.900</span>
+                <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
+              </p>
+
+              <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
+          <a href="#" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
+              <div class="ratio ratio-1x1 mb-3">
+                <img
+                  src="../Server/uploads/1751056174-EIF SKIN CAR E.jpg"
+                  class="img-fluid rounded-3 object-fit-cover w-100 h-100"
+                  alt="Product Name"
+                  loading="lazy">
+              </div>
+
+              <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
+
+              <p class="mb-2">
+                <span class="fw-bold text-success fs-6">Rs.900</span>
+                <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
+              </p>
+
+              <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
+          <a href="#" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
+              <div class="ratio ratio-1x1 mb-3">
+                <img
+                  src="../Server/uploads/1751153642-s5.jpg"
+                  class="img-fluid rounded-3 object-fit-cover w-100 h-100"
+                  alt="Product Name"
+                  loading="lazy">
+              </div>
+
+              <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
+
+              <p class="mb-2">
+                <span class="fw-bold text-success fs-6">Rs.900</span>
+                <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
+              </p>
+
+              <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
+          <a href="#" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
+              <div class="ratio ratio-1x1 mb-3">
+                <img
+                  src="../Server/uploads/1751151270-s3.jpg"
+                  class="img-fluid rounded-3 object-fit-cover w-100 h-100"
+                  alt="Product Name"
+                  loading="lazy">
+              </div>
+
+              <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
+
+              <p class="mb-2">
+                <span class="fw-bold text-success fs-6">Rs.900</span>
+                <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
+              </p>
+
+              <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
+          <a href="#" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
+              <div class="ratio ratio-1x1 mb-3">
+                <img
+                  src="../Server/uploads/1750985785-12.jpg"
+                  class="img-fluid rounded-3 object-fit-cover w-100 h-100"
+                  alt="Product Name"
+                  loading="lazy">
+              </div>
+
+              <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
+
+              <p class="mb-2">
+                <span class="fw-bold text-success fs-6">Rs.900</span>
+                <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
+              </p>
+
+              <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </a>
+  </div>
+
+
+  </div>
+  </div>
+ <!-- Shop by Category -->
+<section class="py-5 bg-light" id="shop-by-category">
   <div class="container">
-
-    <div class="row g-4">
-      <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
-        <a href="#" class="text-decoration-none">
-          <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
-            <div class="ratio ratio-1x1 mb-3">
-              <img
-                src="../Server/uploads/1750983047-10.jpg"
-                class="img-fluid rounded-3 object-fit-cover w-100 h-100"
-                alt="Product Name"
-                loading="lazy">
-            </div>
-
-            <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
-
-            <p class="mb-2">
-              <span class="fw-bold text-success fs-6">Rs.900</span>
-              <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
-            </p>
-
-            <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
-        <a href="#" class="text-decoration-none">
-          <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
-            <div class="ratio ratio-1x1 mb-3">
-              <img
-                 src="../Server/uploads/1751154824-w1.jpg"
-                class="img-fluid rounded-3 object-fit-cover w-100 h-100"
-                alt="Product Name"
-                loading="lazy">
-            </div>
-
-            <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
-
-            <p class="mb-2">
-              <span class="fw-bold text-success fs-6">Rs.900</span>
-              <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
-            </p>
-
-            <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
-        <a href="#" class="text-decoration-none">
-          <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
-            <div class="ratio ratio-1x1 mb-3">
-              <img
-                src="../Server/uploads/1751056174-EIF SKIN CAR E.jpg"
-                class="img-fluid rounded-3 object-fit-cover w-100 h-100"
-                alt="Product Name"
-                loading="lazy">
-            </div>
-
-            <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
-
-            <p class="mb-2">
-              <span class="fw-bold text-success fs-6">Rs.900</span>
-              <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
-            </p>
-
-            <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
-        <a href="#" class="text-decoration-none">
-          <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
-            <div class="ratio ratio-1x1 mb-3">
-              <img
-                 src="../Server/uploads/1751153642-s5.jpg"
-                class="img-fluid rounded-3 object-fit-cover w-100 h-100"
-                alt="Product Name"
-                loading="lazy">
-            </div>
-
-            <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
-
-            <p class="mb-2">
-              <span class="fw-bold text-success fs-6">Rs.900</span>
-              <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
-            </p>
-
-            <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
-        <a href="#" class="text-decoration-none">
-          <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
-            <div class="ratio ratio-1x1 mb-3">
-              <img
-                 src="../Server/uploads/1751151270-s3.jpg"
-                class="img-fluid rounded-3 object-fit-cover w-100 h-100"
-                alt="Product Name"
-                loading="lazy">
-            </div>
-
-            <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
-
-            <p class="mb-2">
-              <span class="fw-bold text-success fs-6">Rs.900</span>
-              <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
-            </p>
-
-            <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 mb-4 product-card-animate">
-        <a href="#" class="text-decoration-none">
-          <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative hover-shadow">
-            <div class="ratio ratio-1x1 mb-3">
-              <img
-                 src="../Server/uploads/1750985785-12.jpg"
-                class="img-fluid rounded-3 object-fit-cover w-100 h-100"
-                alt="Product Name"
-                loading="lazy">
-            </div>
-
-            <h5 class="fw-semibold mb-2 text-truncate text-dark">Product Name</h5>
-
-            <p class="mb-2">
-              <span class="fw-bold text-success fs-6">Rs.900</span>
-              <small class="text-muted text-decoration-line-through ms-2">Rs.1,120</small>
-            </p>
-
-            <div class="text-warning small">★★★★☆ <span class="text-muted">(1)</span></div>
-          </div>
-        </a>
-      </div>
+    <h2 class="text-center fw-bold mb-5">Shop by Category</h2>
+    <div class="row g-4 justify-content-center">
       
+      <!-- Category Card -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="../Server/uploads/27.jpg" class="card-img-top rounded-top-4" alt="Men's Fashion">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Men's Fashion</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="../Server/uploads/Men's Solid Color Front Closure Pocket Long Sleeve Jacket, Autumn_Winter.jpg" class="card-img-top rounded-top-4" alt="Women's Wear">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Men's Wear</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="../Server/uploads/27.jpg" class="card-img-top rounded-top-4" alt="Electronics">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Electronics</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Home Decor">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Home Decor</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Cards -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Beauty Products">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Beauty Products</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Kids Wear">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Kids Wear</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Gadgets">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Gadgets</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Footwear">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Footwear</h5>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
-</div>
+</section>
+<style>
+  .category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  @media (max-width: 576px) {
+    .card-title {
+      font-size: 1rem;
+    }
+  }
+</style>
 
 
 
-  
-  </a>
-</div>
 
 
+
+
+
+
+
+
+
+  <style>
+    .testimonial-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .testimonial-scroll {
+      display: flex;
+      white-space: nowrap;
+    }
+  </style>
+ <section class="py-5 bg-light" id="testimonials">
+  <div class="container-fluid">
+    <h2 class="text-center mb-4">What Customers Say</h2>
+    <div class="testimonial-wrapper">
+      <div class="testimonial-scroll d-flex flex-nowrap">
+        <!-- Testimonials -->
+        <!-- Repeat this box 10 times with different data -->
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Amazing service and quality products!"
+            </p>
+            <strong class="text-dark d-block text-end">- Ali Raza</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Fast delivery and great support."
+            </p>
+            <strong class="text-dark d-block text-end">- Sana Khan</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Loved the packaging and product quality."
+            </p>
+            <strong class="text-dark d-block text-end">- Umar Farooq</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Customer service was top-notch!"
+            </p>
+            <strong class="text-dark d-block text-end">- Hira Baloch</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Highly recommend this store."
+            </p>
+            <strong class="text-dark d-block text-end">- Zain Shah</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Easy to navigate and fast checkout."
+            </p>
+            <strong class="text-dark d-block text-end">- Rabia Khan</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Product arrived before expected time."
+            </p>
+            <strong class="text-dark d-block text-end">- Imran Ali</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "User-friendly experience!"
+            </p>
+            <strong class="text-dark d-block text-end">- Mahnoor</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Definitely buying again."
+            </p>
+            <strong class="text-dark d-block text-end">- Danish Butt</strong>
+          </div>
+        </div>
+
+        <div class="testimonial-box flex-shrink-0 p-4">
+          <div class="testimonial bg-white p-4 rounded-4 shadow-lg position-relative">
+            <div class="quote-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle p-2">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="fs-5 fst-italic text-secondary mt-3 mb-2">
+              "Responsive support team."
+            </p>
+            <strong class="text-dark d-block text-end">- Ayesha Noor</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-  <?php include("./includes/SECTION.php") ?>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".testimonial-scroll");
+      const items = container.children;
+      const itemCount = items.length;
+
+      // Step 1: Duplicate items for infinite loop effect
+      for (let i = 0; i < itemCount; i++) {
+        container.appendChild(items[i].cloneNode(true));
+      }
+
+      // Step 2: Animate with GSAP
+      const totalWidth = container.scrollWidth / 2; // width of original items
+
+      gsap.to(container, {
+        x: -totalWidth,
+        ease: "none",
+        duration: 30,
+        repeat: -1,
+      });
+    });
+  </script>
+
+ 
 
 
   <?php include("./includes/mobile-icon.php") ?>

@@ -734,7 +734,7 @@ $user_id = $_SESSION['user_id'];
                 })
 
                 .then(() => {
-                  window.location.href = 'http://localhost/Ecomerse-Website/Client/homeprofile.php'
+                  window.location.href = 'http://localhost/Ecoverse/Client/homeprofile.php'
                 })
             } else {
               document.getElementById("error_pc_token").innerText = data.message

@@ -34,7 +34,7 @@ if (!$conn->query($sql2)) {
   exit;
 }
 
-$verify_link = "http://localhost/Ecomerse-Website/Server/Process/pc_verifyemail.php?token=$token";
+$verify_link = "http://localhost/Ecoverse/Server/Process/pc_verifyemail.php?token=$token";
 $mail = new PHPMailer(true);
 try {
   // SMTP settings

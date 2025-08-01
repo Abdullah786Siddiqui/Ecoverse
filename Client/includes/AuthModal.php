@@ -8,7 +8,7 @@ $validity_password = $_GET['password'] ?? '';
 $client = new Google_Client();
 $client->setClientId('5919550015-mstm7brgo6o71m4g1th23g2ohebr47qp.apps.googleusercontent.com');
 $client->setClientSecret('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');
-$client->setRedirectUri('http://localhost/Ecomerse-Website/Server/Process/Google-auth.php');
+$client->setRedirectUri('http://localhost/Ecoverse/Server/Process/Google-auth.php');
 $client->addScope("email");
 $client->addScope("profile");
 

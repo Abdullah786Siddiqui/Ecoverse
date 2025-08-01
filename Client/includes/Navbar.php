@@ -169,7 +169,7 @@
        <?php
         }
         ?>
-           <a href="./test.php" class="btn btn-primary">Inspire</a>
+           <!-- <a href="./test.php" class="btn btn-primary">Inspire</a> -->
 
      </div>
    </div>
