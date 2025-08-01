@@ -37,9 +37,11 @@ function showAuthModal(type) {
     document.getElementById("loginForm").classList.remove("d-none");
   }
 }
+
 const form = document.getElementById("signupForm");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+
   const nameInput = document.getElementById("register_username");
   const emailInput = document.getElementById("register_email");
   const passwordInput = document.getElementById("register_password");
@@ -74,11 +76,28 @@ form.addEventListener("submit", function (e) {
     hasError = true;
   }
 
-  if (hasError) {
-    return; // 🛑 Stop here if invalid
+  // Only show Swal if there are NO errors
+
+
+  if (!hasError) {
+    Swal.fire({
+      title: "Creating your account...",
+      html: `<p style="margin: 0; font-size: 0.9rem;">Sending OTP to your email...</p>`,
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      background: "#f0f9ff",
+      color: "#1e8a35ff",
+      width: "25rem",
+      didOpen: () => {
+        Swal.showLoading();
+        const popup = Swal.getPopup();
+        popup.style.borderRadius = "0.75rem";
+        popup.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+        popup.style.padding = "1.2rem";
+      },
+    });
   }
 
-  const form = e.target;
   const formData = new FormData(form);
 
   fetch("../Server/Process/register-process.php", {
@@ -87,17 +106,19 @@ form.addEventListener("submit", function (e) {
   })
     .then((res) => res.json())
     .then((response) => {
+      Swal.close();
+
       if (response.success) {
         document.getElementById("signup-section").classList.add("d-none");
         document.getElementById("otp-section").classList.remove("d-none");
       } else {
         if (response.error === "email") {
-          document.getElementById("emailError_register").textContent =
-            "This email is already exists";
+          emailError.textContent = "This email already exists";
         }
       }
     })
     .catch(() => {
+      Swal.close();
       alert("Something went wrong. Try again.");
     });
 });
@@ -129,7 +150,7 @@ document.getElementById("verifyOtpBtn").addEventListener("click", function () {
       color: #4a5568; 
       font-size: 0.85rem; 
       margin: 0;
-    ">Welcome to Alexa!</p>
+    ">Welcome to Ecoverse!</p>
   `,
           position: "center",
           showConfirmButton: false,
@@ -166,9 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Clear old errors
-    // document.getElementById("emailError").textContent = "";
-    // document.getElementById("passwordError").textContent = "";
     const emailInput = document.getElementById("login_email");
     const passwordInput = document.getElementById("login_password");
 

@@ -45,8 +45,8 @@ $session = \Stripe\Checkout\Session::create([
   'payment_method_types' => ['card'],
   'line_items' => $lineItems,
   'mode' => 'payment',
-  'success_url' => 'http://localhost/Ecomerse-Website/Server/Process/stripe-order-process.php',
-  'cancel_url' => 'http://localhost/Ecomerse-Website/Client/Payment.php',
+  'success_url' => 'http://localhost/Ecoverse/Server/Process/stripe-order-process.php',
+  'cancel_url' => 'http://localhost/Ecoverse/Client/Payment.php',
 ]);
 
 header("Location: " . $session->url);
