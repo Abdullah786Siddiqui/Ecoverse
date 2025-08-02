@@ -108,9 +108,11 @@ GROUP BY notifications.id
 ORDER BY notifications.created_at DESC
 ";
     $result_query = $conn->query($sql_noti);
-    if ($result_query && $result_query->num_rows > 0) {
-
-
+    // For order_received, order_cancelled, new_customer notifications
+    if (
+      ($notification_field === 'order_received' || $notification_field === 'order_cancelled' || $notification_field === 'new_customer') &&
+      $result_query && $result_query->num_rows > 0
+    ) {
       while ($row = $result_query->fetch_assoc()) {
         if ($notification_field === 'order_received'):
     ?>
@@ -278,30 +280,25 @@ ORDER BY notifications.created_at DESC
 
         endif;
       }
-
-      if ($notification_field === 'out_of_stock') {
-        $sql2 = "SELECT products.id as product_id, name as  product_name , product_images.image_url , quantity  as product_quantity ,created_at FROM products INNER JOIN product_images on product_images.product_id = products.id where quantity = 0";
-        $result2 = $conn->query($sql2);
-        
+    }
+    // For out_of_stock and low_stock notifications, always show products
+    if ($notification_field === 'out_of_stock') {
+      $sql2 = "SELECT products.id as product_id, name as  product_name , product_images.image_url , quantity  as product_quantity ,created_at FROM products INNER JOIN product_images on product_images.product_id = products.id where quantity = 0";
+      $result2 = $conn->query($sql2);
+      if ($result2 && $result2->num_rows > 0) {
         while ($row = $result2->fetch_assoc()) {
         ?>
           <div class="col-12 mb-2">
             <div class="card rounded-3 shadow-sm bg-light position-relative">
               <div class="card-body p-3 d-flex align-items-center gap-2">
-
-                <!-- Product Image -->
                 <div class="flex-shrink-0 rounded-3 overflow-hidden shadow-sm border" style="width: 48px; height: 48px;">
                   <img src='../uploads/<?= $row['image_url'] ?>' alt="Product Image" class="img-fluid w-100 h-100 object-fit-cover">
                 </div>
-
-                <!-- Product Info -->
                 <div class="flex-grow-1">
                   <div class="d-flex justify-content-between align-items-start">
                     <h6 class="mb-1 small fw-semibold text-dark">
                       Product <span class="text-danger"><?= $row['product_name'] ?></span> is Out of Stock
                     </h6>
-
-                    <!-- Dropdown -->
                     <div class="dropdown ms-2">
                       <button class="btn btn-sm btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-ellipsis-v text-muted"></i>
@@ -320,52 +317,47 @@ ORDER BY notifications.created_at DESC
                       </ul>
                     </div>
                   </div>
-
-                  <!-- Meta Info -->
                   <div class="small text-dark mb-1">
                     Product ID: <strong><?= $row['product_id'] ?></strong> &bull;
                     Qty: <strong><?= $row['product_quantity'] ?></strong>
                   </div>
-
-                  <!-- Status -->
                   <div class="small text-dark">
                     <i class="fas fa-industry me-1"></i>
                     Status: <strong>Out of Stock</strong>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
-
-
-
-
         <?php
         }
-      } else  if ($notification_field === 'low_stock') {
-        $sql2 = "SELECT products.id as product_id, name as  product_name , product_images.image_url , quantity  as product_quantity ,created_at FROM products INNER JOIN product_images on product_images.product_id = products.id where quantity <= 5";
-        $result2 = $conn->query($sql2);
+      } else {
+        // No out of stock products
+        ?>
+        <div class="col-12">
+          <div class="alert alert-dark text-center">
+            <i class="fas fa-exclamation-circle me-2"></i> No out of stock products found.
+          </div>
+        </div>
+        <?php
+      }
+    } else if ($notification_field === 'low_stock') {
+      $sql2 = "SELECT products.id as product_id, name as  product_name , product_images.image_url , quantity  as product_quantity ,created_at FROM products INNER JOIN product_images on product_images.product_id = products.id where quantity <= 5";
+      $result2 = $conn->query($sql2);
+      if ($result2 && $result2->num_rows > 0) {
         while ($row = $result2->fetch_assoc()) {
         ?>
           <div class="col-12 mb-2">
             <div class="card rounded-3 shadow-sm bg-light position-relative">
               <div class="card-body p-3 d-flex align-items-center gap-2">
-
-                <!-- Product Image -->
                 <div class="flex-shrink-0 rounded-3 overflow-hidden shadow-sm border border-warning" style="width: 48px; height: 48px;">
                   <img src='../uploads/<?= $row['image_url'] ?>' alt="Product Image" class="img-fluid w-100 h-100 object-fit-cover">
                 </div>
-
-                <!-- Product Info -->
                 <div class="flex-grow-1">
                   <div class="d-flex justify-content-between align-items-start">
                     <h6 class="mb-0 small fw-semibold text-dark">
                       Product <span class="text-warning"><?= $row['product_name'] ?></span> is Low on Stock
                     </h6>
-
-                    <!-- Dropdown -->
                     <div class="dropdown ms-2">
                       <button class="btn btn-sm btn-light border-0 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-ellipsis-v text-muted"></i>
@@ -384,66 +376,65 @@ ORDER BY notifications.created_at DESC
                       </ul>
                     </div>
                   </div>
-
-                  <!-- Meta Info -->
                   <div class="small text-dark mb-1">
                     Product ID: <strong><?= $row['product_id'] ?></strong> &bull;
                     Qty: <strong><?= $row['product_quantity'] ?></strong>
                   </div>
-
-                  <!-- Status -->
                   <div class="small text-dark">
                     <i class="fas fa-exclamation-triangle me-1 text-warning"></i>
                     Status: <strong>Low Stock</strong>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
-
-
-
-
-
-      <?php
+        <?php
         }
+      } else {
+        // No low stock products
+        ?>
+        <div class="col-12">
+          <div class="alert alert-warning text-center">
+            <i class="fas fa-exclamation-circle me-2"></i> No low stock products found.
+          </div>
+        </div>
+      <?php
       }
     }
-else {
-  switch ($notification_field) {
-    case 'order_received':
-      $message = "No received orders found.";
-      $alertClass = "success";
-      break;
-    case 'order_cancelled':
-      $message = "No cancelled orders found.";
-      $alertClass = "danger";
-      break;
-    case 'new_customer':
-      $message = "No new customers found.";
-      $alertClass = "primary";
-      break;
-    case 'out_of_stock':
-      $message = "No out of stock products found.";
-      $alertClass = "dark";
-      break;
-    case 'low_stock':
-      $message = "No low stock products found.";
-      $alertClass = "warning";
-      break;
-    default:
-      $message = "No notifications available.";
-      $alertClass = "secondary";
-  }
-  ?>
-  <div class="col-12">
-    <div class="alert alert-<?= $alertClass ?> text-center">
-      <i class="fas fa-exclamation-circle me-2"></i> <?= $message ?>
-    </div>
-  </div>
-<?php } ?>
+    // ...existing code...
+    else {
+      switch ($notification_field) {
+        case 'order_received':
+          $message = "No received orders found.";
+          $alertClass = "success";
+          break;
+        case 'order_cancelled':
+          $message = "No cancelled orders found.";
+          $alertClass = "danger";
+          break;
+        case 'new_customer':
+          $message = "No new customers found.";
+          $alertClass = "primary";
+          break;
+        case 'out_of_stock':
+          $message = "No out of stock products found.";
+          $alertClass = "dark";
+          break;
+        case 'low_stock':
+          $message = "No low stock products found.";
+          $alertClass = "warning";
+          break;
+        default:
+          $message = "No notifications available.";
+          $alertClass = "secondary";
+      }
+      ?>
+      <div class="col-12">
+        <div class="alert alert-<?= $alertClass ?> text-center">
+          <i class="fas fa-exclamation-circle me-2"></i> <?= $message ?>
+        </div>
+      </div>
+    <?php } ?>
 
 
   </div>

@@ -158,7 +158,7 @@ $subtotal = 0;
 <?php    } else {
 ?>
   <div class="empty-cart-section text-center my-5">
-    <img src="https://cdn-icons-png.flaticon.com/128/10967/10967193.png" alt="Empty Cart" style="width: 150px; opacity: 0.8;">
+    <img src="https://cdn-icons-png.flaticon.com/128/2038/2038854.png" alt="Empty Cart" style="width: 150px; opacity: 0.8;">
     <h2 class="mt-4">Your Cart is Empty</h2>
     <p class="text-muted">Looks like you haven’t added anything to your bag yet.</p>
     <a href="./index.php" class="btn btn-primary mt-3 px-4 py-2 fw-bold">Continue Shopping</a>

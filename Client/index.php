@@ -359,110 +359,8 @@ include_once './includes/Navbar.php';
 
   </div>
   </div>
-  <!-- Shop by Category -->
-  <section class="py-5 bg-light" id="shop-by-category">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">Shop by Category</h2>
-      <div class="row g-4 justify-content-center">
+ 
 
-        <!-- Category Card -->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="../Server/uploads/27.jpg" class="card-img-top rounded-top-4" alt="Men's Fashion">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Men's Fashion</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="../Server/uploads/Men's Solid Color Front Closure Pocket Long Sleeve Jacket, Autumn_Winter.jpg" class="card-img-top rounded-top-4" alt="Women's Wear">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Men's Wear</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="../Server/uploads/1750979066-5.jpg" class="card-img-top rounded-top-4" alt="Electronics">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Electronics</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Home Decor">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Home Decor</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional Cards -->
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Beauty Products">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Beauty Products</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Kids Wear">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Kids Wear</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Gadgets">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Gadgets</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm rounded-4 text-center category-card">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top-4" alt="Footwear">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">Footwear</h5>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <style>
-    .category-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .category-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-title {
-      font-size: 1.1rem;
-      color: #333;
-    }
-
-    @media (max-width: 576px) {
-      .card-title {
-        font-size: 1rem;
-      }
-    }
-  </style>
 
 
 
@@ -642,7 +540,11 @@ include_once './includes/Navbar.php';
   </script>
 
 
-
+<!-- <footer class="bg-dark text-white py-3 text-center w-100 mt-auto">
+  <div class="container">
+    &copy; 2025 Abdullah. All rights reserved.
+  </div>
+</footer> -->
 
   <?php include("./includes/mobile-icon.php") ?>
   <?php include 'Components/footer2.html'; ?>

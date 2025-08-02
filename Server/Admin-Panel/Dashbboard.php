@@ -84,14 +84,15 @@
              <?php
 
                 $sql = "SELECT 
-    COUNT(orders.id) AS order_count,
+    COUNT(DISTINCT orders.id) AS order_count,
     SUM(orders.total) AS total_sales,
-    COUNT(CASE WHEN orders.status = 'delivered' THEN 1 END) AS paid_orders
+    COUNT(DISTINCT CASE WHEN orders.status = 'delivered' THEN orders.id END) AS paid_orders
 FROM 
     orders
     INNER JOIN order_items ON orders.id = order_items.order_id
 WHERE 
     orders.created_at >= DATE_FORMAT(CURDATE(), '%Y-%m-01');
+
 ";
                 $result = $conn->query($sql);
                 if ($row = $result->fetch_assoc()) {

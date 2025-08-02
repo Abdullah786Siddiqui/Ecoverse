@@ -184,7 +184,7 @@ if ($row = $result->fetch_assoc()) {
                 <label for="productQty" class="form-label fw-medium">Quantity</label>
                 <div class="input-group shadow-sm">
                   <span class="input-group-text"><i class="bi bi-stack"></i></span>
-                  <input type="number" value="<?= $row['quantity'] ?>" name="update_product_quantity" id="productQty" class="form-control" placeholder="0">
+                  <input type="number" min="1"  value="<?= $row['quantity'] ?>" name="update_product_quantity" id="productQty" class="form-control" placeholder="0">
                 </div>
                 <small class="text-danger" id="qty-error"></small>
               </div>
